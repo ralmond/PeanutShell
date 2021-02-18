@@ -297,7 +297,7 @@ setMethod("PnodeEvidence<-",c("PnodeShell","ANY"),
 #### Net Functions
 
 setMethod("PnetName","PnetShell", function (net){
-    stop("Method PnetName not implemented for PnetShell, logical.")
+    stop("Method PnetName not implemented for PnetShell.")
     nme <- NetworkUserField(net,"Truename")
     if (is.null(nme) || is.na(nme)) {
         nme <- NetworkName(net)
@@ -306,7 +306,7 @@ setMethod("PnetName","PnetShell", function (net){
 })
 
 setMethod("PnetName<-","PnetShell", function (net, value) {
-    stop("Method PnetName<- not implemented for PnetShell, logical.")
+    stop("Method PnetName<- not implemented for PnetShell.")
   NetworkUserField(net,"Truename")
   NetworkName(net) <- as.IDname(value)
   invisible(net)
@@ -314,13 +314,13 @@ setMethod("PnetName<-","PnetShell", function (net, value) {
 
 
 setMethod("PnetTitle","PnetShell", function (net) {
-    stop("Method PnetTitle not implemented for PnetShell, logical.")
+    stop("Method PnetTitle not implemented for PnetShell.")
   NetworkTitle(net)
 })
 
 
 setMethod("PnetTitle<-","PnetShell", function (net, value) {
-    stop("Method PnetTitle<- not implemented for PnetShell, logical.")
+    stop("Method PnetTitle<- not implemented for PnetShell.")
   NetworkTitle(net) <- value
   invisible(net)
 })
@@ -328,21 +328,21 @@ setMethod("PnetTitle<-","PnetShell", function (net, value) {
 
 ## The HUB is the name of the CM for an EM, or "" for an CM.
 setMethod("PnetHub","PnetShell", function (net) {
-    stop("Method PnetHub not implemented for PnetShell, logical.")
+    stop("Method PnetHub not implemented for PnetShell.")
   NetworkUserField(net,"Hub")
 })
 
 
 ## Value could be the actual model or its name.
 setMethod("PnetHub<-","PnetShell", function (net, value) {
-    stop("Method PnetHub<- not implemented for PnetShell, logical.")
+    stop("Method PnetHub<- not implemented for PnetShell.")
   NetworkUserField(net,"Hub") <-value
   invisible(net)
 })
 
 ## Note:  This is not necessarily the same as the GetNeticaPathname() function.
 setMethod("PnetPathname","PnetShell", function (net) {
-    stop("Method PnetPathname not implemented for PnetShell, logical.")
+    stop("Method PnetPathname not implemented for PnetShell.")
   value <- NetworkUserField(net,"Pathname")
   if (is.na(value) || is.null(value) || nchar(value)==0L) {
     value <- attr(net,"Filename")
@@ -351,30 +351,30 @@ setMethod("PnetPathname","PnetShell", function (net) {
 })
 
 setMethod("PnetPathname<-","PnetShell", function (net, value) {
-    stop("Method PnetPathname<- not implemented for PnetShell, logical.")
+    stop("Method PnetPathname<- not implemented for PnetShell.")
   NetworkUserField(net,"Pathname") <-value
   invisible(net)
 })
 
 setMethod("PnetDescription","PnetShell", function (net) {
-    stop("Method PnetDescription not implemented for PnetShell, logical.")
+    stop("Method PnetDescription not implemented for PnetShell.")
   NetworkComment(net)
 })
 
 setMethod("PnetDescription<-","PnetShell", function (net, value) {
-    stop("Method PnetDescription<- not implemented for PnetShell, logical.")
+    stop("Method PnetDescription<- not implemented for PnetShell.")
   NetworkComment(net) <- value
   invisible(net)
 })
 
 
 setMethod("PnetFindNode","PnetShell", function(net,name) {
-    stop("Method PnetFindNode not implemented for PnetShell, logical.")
+    stop("Method PnetFindNode not implemented for PnetShell.")
   NetworkFindNode(net,as.IDname(name))
 })
 
 setMethod("PnetSerialize","PnetShell",
-    stop("Method PnetSerialize not implemented for PnetShell, logical.")
+    stop("Method PnetSerialize not implemented for PnetShell.")
           function (net) {
             factory <- net$Session$SessionName
             name <- PnetName(net)
@@ -386,7 +386,7 @@ setMethod("PnetSerialize","PnetShell",
 
 
 setMethod("unserializePnet","ShellSession",
-    stop("Method unserializePnet not implemented for ShellSession, logical.")
+    stop("Method unserializePnet not implemented for ShellSession.")
           function(factory,data) {
             name <- data$name
             tmpfile <- file.path(tempdir(),paste(name,"dne",sep="."))
@@ -401,6 +401,6 @@ setMethod("unserializePnet","ShellSession",
           })
 
 setMethod("PnetCompile","PnetShell",function(net) {
-    stop("Method PnetCompile not implemented for PnetShell, logical.")
+    stop("Method PnetCompile not implemented for PnetShell.")
     CompileNetwork(net)
     })
