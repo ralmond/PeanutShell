@@ -1,0 +1,12 @@
+Package: PeanutShell
+Version: 0.8-1
+Date: 2021/02/15
+Title: Parameterized Bayesian Networks Shell Interface
+Author: Russell Almond
+Maintainer: Russell Almond <ralmond@fsu.edu>
+Depends: R (>= 3.0), CPTtools (>= 0.5), Peanut (>= 0.8), futile.logger, methods
+Description: This package provides shell implementation of Peanut interface.  Meant to be copied and implemented.
+License: Artistic-2.0 
+URL: http://pluto.coe.fsu.edu/RNetica
+
+

@@ -1,0 +1,13 @@
+* Looks like we can't directly make NeticaBN a subclass of PNet.  We
+   need to create a wrapper class, which will mean rewriting most of
+   PNetica.  [Fixed this by just using "ANY" instead of "PNet" or
+   "Pnode" classes.]
+* Create a mode for warehouses where they generate an error rather
+   than autogenerate a blank network.
+
+
+
+
+
+
+

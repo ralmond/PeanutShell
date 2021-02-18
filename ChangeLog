@@ -1,0 +1,6 @@
+2021-02-16  Russell Almond  <ralmond@cherry>
+
+	* R/StatShell.R: PnodeXXX(PnetShell,character):  These methods could probably be moved to the Peanut Package.
+
+	
+

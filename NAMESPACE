@@ -1,0 +1,74 @@
+import(methods)
+import(Peanut)
+import(CPTtools)
+import(futile.logger)
+importFrom("stats", "median")
+
+exportMethods(is.Pnet,as.Pnet,PnetPriorWeight,
+              "PnetPriorWeight<-", PnetPnodes,
+              "PnetPnodes<-", calcPnetLLike, calcExpTables) # NeticaBN
+exportMethods("PnetSerialize","unserializePnet")
+
+exportMethods(is.Pnode,as.Pnode, Pnode, PnodeNet,
+              PnodeQ, "PnodeQ<-", PnodePriorWeight,
+              "PnodePriorWeight<-", PnodeRules,
+              "PnodeRules<-", PnodeLink, "PnodeLink<-",
+              PnodeLnAlphas, "PnodeLnAlphas<-",
+              PnodeBetas, "PnodeBetas<-",
+              PnodeLinkScale, "PnodeLinkScale<-",
+              BuildTable, PnodeParentTvals,
+              maxCPTParam)  #NeticaNode
+
+exportMethods(PnodeName,"PnodeName<-",
+              PnodeTitle,"PnodeTitle<-",
+              PnodeDescription,"PnodeDescription<-",
+              PnodeLabels,"PnodeLabels<-",
+              PnodeStates,"PnodeStates<-",
+              PnodeNumStates,PnodeStateTitles,
+              "PnodeStateTitles<-",PnodeStateDescriptions,
+              "PnodeStateDescriptions<-",PnodeStateValues,
+              "PnodeStateValues<-",PnodeParents,
+              PnodeStateBounds, "PnodeStateBounds<-",
+              "PnodeParents<-", isPnodeContinuous,
+              PnodeParentNames,PnodeNumParents,
+              PnodeEvidence,"PnodeEvidence<-",
+              PnodePriorWeight, "PnodePriorWeight<-",
+              PnodePostWeight,
+              PnodeProbs, "PnodeProbs<-"
+              ) #NeticaNode
+
+exportMethods(PnetName,"PnetName<-",
+              PnetTitle,"PnetTitle<-",
+              PnetDescription,"PnetDescription<-",
+              PnetPathname,"PnetPathname<-",
+              PnetHub,"PnetHub<-",
+              PnetCompile) #NeticaBN
+
+exportMethods(PnetFindNode)
+export(MakePnet.NeticaBN,MakePnode.NeticaNode) ## Not actually S3 Methods
+export(BNWarehouse,NNWarehouse)
+exportClasses(BNWarehouse,NNWarehouse)
+export(WarehouseDirectory,"WarehouseDirectory<-")
+exportMethods(ClearWarehouse,
+              WarehouseManifest,"WarehouseManifest<-",
+       WarehouseData,WarehouseFetch,WarehouseSupply,
+       WarehouseMake,WarehouseFree, WarehouseUnpack,
+       WarehouseInventory,WarehouseSave,
+       is.PnodeWarehouse,is.PnetWarehouse,
+       WarehouseDirectory,"WarehouseDirectory<-",
+       WarehouseCopy,is.legal.name,as.legal.name,is.valid)
+##export(Free,Save,Reload,Delete)     #Warehouse protocol
+##exportMethods(Free,Save,Reload,Delete)     #Warehouse protocol
+
+
+exportMethods(PnodeMargin, PnodeEAP, PnodeSD, PnodeMedian,
+              PnodeMode)
+
+
+
+
+
+
+
+
+
